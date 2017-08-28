@@ -1,6 +1,9 @@
 class Hamming
 
   def self.compute(string1, string2)
+    if string1.length != string2.length
+      raise ArgumentError.new("DNA strands must be the same length to compare.")
+    end
     string1_array = string1.split("")
     string2_array = string2.split("")
     hamming_distance = 0
